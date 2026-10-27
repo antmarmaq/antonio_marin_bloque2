@@ -1,2 +1,2 @@
-def add_task(**kwargs):
+def add_task(nombre, **kwargs):
     return
