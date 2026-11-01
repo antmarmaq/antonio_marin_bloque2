@@ -4,3 +4,7 @@ def new_task():
 
 def show_list():
     return None
+
+
+def search_tasl():
+    return None
