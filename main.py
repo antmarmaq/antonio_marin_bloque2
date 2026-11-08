@@ -1,4 +1,4 @@
-from app.display import cls, confirm, menu, title
+from app.display import cls, menu, title
 from app.modelos import new_task, search_task, show_list
 
 """
@@ -51,7 +51,6 @@ MIENTRAS Verdadero:
     SI accion == "4" ENTONCES
         END
 """
-
 
 # Inicializamos creando la lista vacía de tareas.
 tasks = []
