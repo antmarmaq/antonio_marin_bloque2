@@ -1,13 +1,12 @@
 from app.display import cls, confirm, menu, title
-from app.modelos import new_task, show_list
-from app.operaciones import add_task
+from app.modelos import new_task, search_task, show_list
 
 """
 // 1. INICIALIZACIÓN
 MIENTRAS Verdadero:
     MOSTRAR Titulo
     MOSTRAR Menu
-    accion = PEDIR Selecione (1,2,3)
+    accion = PEDIR Seleccione el número de la operación a realizar: 
 
     // 2. Procesar la selección
     SI accion == "1":
@@ -52,21 +51,31 @@ MIENTRAS Verdadero:
     SI accion == "4" ENTONCES
         END
 """
-while True:
-    cls()
-    title()
-    menu()
-    action = input("Seleccione lo que quiere hacer (1, 2 o 3)")
 
-    if action == "1":
-        print("adding task")
-        new_task()
-        confirm()
-    if action == "2":
-        print("showing list")
-        show_list()
-        confirm()
-    if action == "3":
-        break
-    else:
-        continue
+
+# Inicializamos creando la lista vacía de tareas.
+tasks = []
+try:
+    while True:
+        cls()
+        title()
+        menu()
+        action = input("Seleccione el número de la operación a realizar: ")
+
+        if action == "1":
+            new_task(tasks)
+
+        if action == "2":
+            show_list(tasks)
+
+        if action == "3":
+            search_task(tasks)
+
+        if action == "4":
+            break
+
+        else:
+            continue
+
+except KeyboardInterrupt:
+    print("\nCerrando el programa...")
