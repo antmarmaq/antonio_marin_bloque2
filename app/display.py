@@ -34,7 +34,7 @@ def menu():
     print("\U00002551" + " 2. Ver lista de tareas  \U0001f4cb " + "\U00002551")
     print("\U00002551" + " 3. Buscar tarea         \U0001f50d " + "\U00002551")
     print("\U00002551" + " 4. Salir del programa   \U0001f44b " + "\U00002551")
-    print("\U0000255a" + 28 * "\U00002550" + "\U0000255d" + Style.RESET_ALL)
+    print("\U0000255a" + 28 * "\U00002550" + "\U0000255d\n" + Style.RESET_ALL)
 
 
 def menu_de_detalles():
@@ -49,4 +49,4 @@ def menu_de_detalles():
     print("\U00002551" + " 4. Etiquetas               " + "\U00002551")
     print("\U00002551" + " 5. Editar nombre           " + "\U00002551")
     print("\U00002551" + " 6. Terminar                " + "\U00002551")
-    print("\U0000255a" + 28 * "\U00002550" + "\U0000255d" + Style.RESET_ALL)
+    print("\U0000255a" + 28 * "\U00002550" + "\U0000255d\n" + Style.RESET_ALL)

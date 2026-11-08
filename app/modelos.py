@@ -20,7 +20,7 @@ def new_task(tasks):
             cls()
             title()
             print(Fore.GREEN + "Añadiendo tarea:" + Style.RESET_ALL + f"{name}")
-            details["description"] = input(
+            details["descripcionion"] = input(
                 Fore.YELLOW
                 + "Escriba una breve descripción de su tares: "
                 + Style.RESET_ALL
@@ -40,7 +40,7 @@ def new_task(tasks):
                         )
                     )
                     if priority not in range(11):
-                        details["priority"] = priority
+                        details["prioridad"] = priority
                         continue
                     else:
                         break
@@ -51,13 +51,13 @@ def new_task(tasks):
             cls()
             title()
             print(Fore.GREEN + "Añadiendo tarea:" + Style.RESET_ALL + f"{name}")
-            details["deadline"] = input_date()
+            details["fecha limite"] = input_date()
 
         if opcion == "4":
             cls()
             title()
             print(Fore.GREEN + "Añadiendo tarea:" + Style.RESET_ALL + f"{name}")
-            details["tags"] = (
+            details["etiquetas"] = (
                 input(
                     Fore.YELLOW
                     + "Escriba las etiquetas que le gustaría añadir a la tarea: "
@@ -99,4 +99,32 @@ def show_list(tasks):
 
 
 def search_task(tasks):
-    pass
+    cls()
+    title()
+    search = input("Escriba la tarea de la que quiere los detalles: ")
+    if not tasks:
+        print(Fore.RED + "No hay ninguna tarea en la lista" + Style.RESET_ALL)
+
+    results = 0
+    for task in tasks:
+        if task["nombre"].lower() in search.lower():
+            results += 1
+    if results == 0:
+        print(
+            Fore.RED
+            + f"No se ha encontrado ninguna tarea con nombre: {search}"
+            + Style.RESET_ALL
+        )
+    else:
+        for task in tasks:
+            if task["nombre"].lower() in search.lower():
+                print(
+                    Fore.YELLOW
+                    + Style.BRIGHT
+                    + f"Detalles de la tarea {search}:\n"
+                    + Style.RESET_ALL
+                )
+                for key, value in task.items():
+                    print(f"{key}: {value}")
+                break
+        confirm()
