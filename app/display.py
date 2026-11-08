@@ -41,12 +41,12 @@ def menu_de_detalles():
     """
     Imprime el menu de detalles para añadir a la tarea
     """
-    print("\nElija una opción para añadir información a su tarea: ")
-    print(Fore.YELLOW + "\U00002554" + 28 * "\U00002550" + "\U00002557")
+    print(Fore.YELLOW + "\nElija una opción para añadir información a su tarea: ")
+    print("\U00002554" + 28 * "\U00002550" + "\U00002557")
     print("\U00002551" + " 1. Descripción             " + "\U00002551")
     print("\U00002551" + " 2. Prioridad               " + "\U00002551")
     print("\U00002551" + " 3. Fecha límite            " + "\U00002551")
     print("\U00002551" + " 4. Etiquetas               " + "\U00002551")
     print("\U00002551" + " 5. Editar nombre           " + "\U00002551")
     print("\U00002551" + " 6. Terminar                " + "\U00002551")
-    print("\U0000255a" + 28 * "\U00002550" + "\U0000255d\n" + Style.RESET_ALL)
+    print("\U0000255a" + 28 * "\U00002550" + "\U0000255d" + Style.RESET_ALL)

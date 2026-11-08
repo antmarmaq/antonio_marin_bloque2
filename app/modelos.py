@@ -40,9 +40,9 @@ def new_task(tasks):
                         )
                     )
                     if priority not in range(11):
-                        details["prioridad"] = priority
                         continue
                     else:
+                        details["prioridad"] = priority
                         break
                 except ValueError:
                     continue
