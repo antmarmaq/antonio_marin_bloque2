@@ -22,6 +22,7 @@ def input_date():
                         month = "0" + day
                     break
                 else:
+                    print("El día debe ser un número entre el 1 y el 31.")
                     continue
             except ValueError:
                 continue
@@ -33,10 +34,11 @@ def input_date():
         if len(month) <= 2:
             try:
                 if 0 < int(month) < 13:
+                    if len(month) == 1:
+                        month = "0" + month
                     break
-                if len(month) == 1:
-                    month = "0" + month
                 else:
+                    print("El mes debe ser un número entre el 1 y el 12.")
                     continue
             except ValueError:
                 continue
@@ -54,6 +56,8 @@ def input_date():
                     continue
             except ValueError:
                 continue
+        elif len(year) < 4:
+            print("Asegurese de escribir el año con 4 dígitos.")
         else:
             continue
     return f"{day}/{month}/{year}"

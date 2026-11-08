@@ -119,16 +119,20 @@ def search_task(tasks):
             )
             confirm()
         else:
+            cls()
+            title()
+            print(
+                Fore.YELLOW
+                + Style.BRIGHT
+                + f"Se han encontrado {len(results)} resultados para: {search}"
+                + Style.RESET_ALL
+            )
+            index = 1
             for task in results:
-                cls()
-                title()
                 if search.lower() in task["nombre"].lower():
-                    print(
-                        Fore.YELLOW
-                        + Style.BRIGHT
-                        + f"Detalles de la tarea {search}:\n"
-                        + Style.RESET_ALL
-                    )
+                    print(Fore.YELLOW + f"\nResultado {index}:")
+                    index += 1
                     for key, value in task.items():
-                        print(f"{key}: {value}")
+                        print(Fore.GREEN + f"{key}:" + Style.RESET_ALL + f" {value}")
+            print(Style.RESET_ALL)
             confirm()
