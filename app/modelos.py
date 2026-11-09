@@ -1,4 +1,6 @@
 from colorama import *
+from pathlib import Path
+import pickle
 
 from .display import cls, confirm, menu_de_detalles, title
 from .operaciones import add_task, input_date
@@ -136,3 +138,70 @@ def search_task(tasks):
                         print(Fore.GREEN + f"{key}:" + Style.RESET_ALL + f" {value}")
             print(Style.RESET_ALL)
             confirm()
+
+
+def new_dir():
+    """"
+    Pide un nombre y crea un directorio con dicho nombre
+    """
+    print(Fore.GREEN + "Creando nueva carpeta" + Style.RESET_ALL)
+    name = input("Escriba el nombre del directorio a crear: ")
+    directory = Path(name)
+    directory.mkdir(exist_ok=True)
+    print(Fore.GREEN + "Carpeta creada exitosamente." + Style.RESET_ALL)
+    confirm()
+
+
+def del_dir():
+    """"
+    Pide un nombre y borra un directorio con dicho nombre
+    """
+    print(Fore.GREEN + "Borrando carpeta" + Style.RESET_ALL)
+    name = input("Escriba el nombre del directorio a borrar: ")
+    directory = Path(name)
+    if directory.exists():
+        directory.rmdir()
+        print(Fore.GREEN + "Carpeta borrada exitosamente." + Style.RESET_ALL)
+    else:
+        print(Fore.RED + "No se ha encontrado ninguna carpeta con ese nombre: " + Style.RESET_ALL)
+    confirm()
+
+
+def new_flat_file():
+    """
+    Pide una carpeta y un nombre de archivo para crear un archivo de texto plano, luego pide que escribas lo que quieres que tenga el archivo y lo crea
+    """
+    dir_name = input("Escriba el nombre del directorio en el que quiere crear el archivo: ")
+    directory = Path(dir_name)
+    if directory.exists():
+        file_name = input("Escriba el nombre del archivo que quiere crear: ")
+        file = directory / f"{file_name}.txt"
+        content = input("Escriba el texto que quiere que incluya el archivo:\n")
+        file.write_text(content, encoding='utf-8')
+        print(Fore.GREEN + "Archivo creado correctamente." + Style.RESET_ALL)
+    else:
+        print(Fore.RED + "No se ha encontrado ninguna carpeta con ese nombre" + Style.RESET_ALL)
+    confirm()
+
+
+def new_binary_file():
+    """
+    Pide una carpeta y un nombre de archivo para crear un archivo de texto plano, luego pide que escribas lo que quieres que tenga el archivo y lo crea
+    """
+    dir_name = input("Escriba el nombre del directorio en el que quiere crear el archivo: ")
+    directory = Path(dir_name)
+    if directory.exists():
+        file_name = input("Escriba el nombre del archivo que quiere crear: ")
+        file = directory / f"{file_name}.pkl"
+        content = input("Escriba el texto que quiere que incluya el archivo:\n")
+        ruta = Path("C:/Users/PYTHON/Desktop/Antonio Marín Maqueda/antonio_marin_bloque2/{dir_name}/{file_name}.pkl")
+        with open(f"{file_name}.pkl", 'wb') as f:
+            pickle.dump(content,f)
+        print(Fore.GREEN + "Archivo creado correctamente." + Style.RESET_ALL)
+    else:
+        print(Fore.RED + "No se ha encontrado ninguna carpeta con ese nombre" + Style.RESET_ALL)
+    confirm()
+
+
+def del_file():
+    pass

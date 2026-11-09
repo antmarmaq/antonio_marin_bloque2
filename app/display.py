@@ -21,11 +21,11 @@ def title():
     """
     print(
         Fore.BLUE,
-        Style.BRIGHT + text2art("Gestor de Tareas") + Style.RESET_ALL,
+        Style.BRIGHT + text2art("GESTOR DE ARCHIVOS") + Style.RESET_ALL,
     )
 
 
-def menu():
+def menu_finanzas():
     """
     Imprime el menu de la aplicación
     """
@@ -34,6 +34,21 @@ def menu():
     print("\U00002551" + " 2. Ver lista de tareas  \U0001f4cb " + "\U00002551")
     print("\U00002551" + " 3. Buscar tarea         \U0001f50d " + "\U00002551")
     print("\U00002551" + " 4. Salir del programa   \U0001f44b " + "\U00002551")
+    print("\U0000255a" + 28 * "\U00002550" + "\U0000255d\n" + Style.RESET_ALL)
+
+
+def menu_ficheros():
+    """
+    Imprime el menu de la aplicación
+    """
+    print(Fore.YELLOW + "\U00002554" + 28 * "\U00002550" + "\U00002557")
+    print("\U00002551" + " 1. Crear carpeta        \U00002795 " + "\U00002551")
+    print("\U00002551" + " 2. Borrar carpeta       \U00002795 " + "\U00002551")
+    print("\U00002551" + " 3. Crear fichero plano  \U0001f4cb " + "\U00002551")
+    print("\U00002551" + " 4. Crear fichero binario\U0001f50d " + "\U00002551")
+    print("\U00002551" + " 5. Borrar fichero       \U0001f44b " + "\U00002551")
+    print("\U00002551" + " 6. Mover ficheros       \U0001f44b " + "\U00002551")
+    print("\U00002551" + " 7. Salir del programa   \U0001f50d " + "\U00002551")
     print("\U0000255a" + 28 * "\U00002550" + "\U0000255d\n" + Style.RESET_ALL)
 
 
